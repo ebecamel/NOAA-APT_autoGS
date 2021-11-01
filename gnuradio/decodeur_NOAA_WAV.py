@@ -37,7 +37,7 @@ class decodeur_NOAA_WAV(gr.top_block):
         ##################################################
         self.samp_rate = samp_rate = 48000
         self._name_record_config = configparser.ConfigParser()
-        self._name_record_config.read('/home/enzo/Documents/GNURadio/decodeur_NOAA/sdr4space_multi/last_record.ini')
+        self._name_record_config.read('../last_record.ini')
         try: name_record = self._name_record_config.get('main', 'key')
         except: name_record = "record"
         self.name_record = name_record
@@ -45,7 +45,7 @@ class decodeur_NOAA_WAV(gr.top_block):
         ##################################################
         # Blocks
         ##################################################
-        self.blocks_wavfile_sink_0 = blocks.wavfile_sink('/home/enzo/Documents/GNURadio/decodeur_NOAA/record.wav', 1, samp_rate, 8)
+        self.blocks_wavfile_sink_0 = blocks.wavfile_sink('record.wav', 1, samp_rate, 8)
         self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, "/home/enzo/Documents/GNURadio/decodeur_NOAA/sdr4space_multi/" + name_record, False, 0, 0)
         self.blocks_file_source_0.set_begin_tag(pmt.PMT_NIL)
         self.audio_sink_0 = audio.sink(samp_rate, '', True)

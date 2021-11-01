@@ -37,7 +37,7 @@ blocks:
   id: variable_config
   parameters:
     comment: ''
-    config_file: /home/enzo/Documents/GNURadio/decodeur_NOAA/sdr4space_multi/last_record.ini
+    config_file: ../last_record.ini
     option: key
     section: main
     type: string
@@ -125,7 +125,7 @@ blocks:
     alias: ''
     bits_per_sample: '8'
     comment: ''
-    file: /home/enzo/Documents/GNURadio/decodeur_NOAA/record.wav
+    file: record.wav
     nchan: '1'
     samp_rate: samp_rate
   states:
